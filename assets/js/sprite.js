@@ -2,9 +2,10 @@ import * as THREE from "three";
 import { OrbitControls } from "orbitControls";
 import GUI from 'https://cdn.jsdelivr.net/npm/lil-gui@0.17/+esm';
 
-let scene, camera, renderer, controls;
+let scene, camera, renderer, controls, kendali;
 
 let material, sprite;
+var light;
 
 init();
 animate();
@@ -42,7 +43,7 @@ function init() {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.addEventListener( 'change', render );
 
-    var light = new THREE.PointLight(0xFFFFFF, 1, 500);
+    light = new THREE.PointLight(0xFFFFFF, 1, 500);
     light.position.set(0, 2, 0);
     scene.add(light);
     scene.add(new THREE.PointLightHelper(light, 0.5, 0xff0000));
@@ -53,7 +54,7 @@ function init() {
 }
 
 function Gui() {
-    let kendali = new Object();
+    kendali = new Object();
     kendali.x = 0;
     kendali.y = 2;
     kendali.z = 2;
@@ -122,5 +123,6 @@ function onWindowResize() {
 }
 
 function render() {
+    light.position.set(kendali.x, kendali.y, kendali.z);
     renderer.render( scene, camera );
 }
