@@ -62,7 +62,7 @@ const guiTextureHash = {
 //var box = new THREE.SphereGeometry(1, 10, 10);
 // x,y,z position
 var box = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
-var boxMat = new THREE.MeshPhysicalMaterial({
+var boxMat = new THREE.MeshStandardMaterial({
     color: 0xFFCC00
         // map: brickTexture,
         // alphaMap: brickAlpha,
