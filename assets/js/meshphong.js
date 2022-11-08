@@ -218,6 +218,7 @@ let displacementMapDropdown = materialFolder.add(guiOptions, "Displacement Map",
 
 materialFolder.add(boxMat, "displacementScale", 0, 1).name("Displacement Scale").listen();
 
+materialFolder.addColor(boxMat, "specular").name("Specular").listen();
 materialFolder.add(boxMat, "shininess", 0, 100).name("Shininess").listen();
 
 let emissivePick = materialFolder.addColor(boxMat, "emissive").name("Emissive Color").listen();
