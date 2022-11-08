@@ -60,8 +60,8 @@ const envMapHash = {
 
 // Radius, Width and Height
 // x,y,z position
-// var box = new THREE.SphereGeometry(1);
-var box = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
+var box = new THREE.SphereGeometry(1);
+// var box = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
 var boxMat = new THREE.MeshPhongMaterial({
   color: 0x00ffff,
 });
@@ -217,6 +217,8 @@ let displacementMapDropdown = materialFolder.add(guiOptions, "Displacement Map",
 });
 
 materialFolder.add(boxMat, "displacementScale", 0, 1).name("Displacement Scale").listen();
+
+materialFolder.add(boxMat, "shininess", 0, 100).name("Shininess").listen();
 
 let emissivePick = materialFolder.addColor(boxMat, "emissive").name("Emissive Color").listen();
 materialFolder.add(boxMat, "emissiveIntensity", 0, 1).name("Emissive Intensity").listen();
